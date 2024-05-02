@@ -16,7 +16,7 @@ git clone https://github.com/EdderJamanca/Frontend_Noticia.git
 ```bash
     npm install
 ````
-4. Ejecuta la aplicación en modo de desarrollo:
+3. Ejecuta la aplicación en modo de desarrollo:
 ```bash
    ng serve
 ````

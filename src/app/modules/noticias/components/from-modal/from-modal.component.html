@@ -1,0 +1,46 @@
+<mat-dialog-content>
+  <div class="w-full mb-3">
+    <label for="categoria" class="text-gray-800 mb-1">Categoria:</label>
+    <!-- <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"> -->
+
+    <select
+      class="bg-gray-50 border
+      border-gray-300 text-gray-900
+      text-sm rounded-lg focus:ring-blue-500
+      focus:border-blue-500  block w-full p-2.5"
+      [formControl]="idCategoriaCtrol"
+    >
+      @for(categoria of arrayCategoria;track categoria){
+        <option [value]="categoria.idcategoria">{{categoria.Nom_Categoria}}</option>
+      }
+      <!-- <option value="">Peru 1</option> -->
+      <!-- <option value="">Peru 3</option> -->
+    </select>
+  </div>
+  <div class="w-full mb-3">
+    <label for="categoria" class="text-gray-800 mb-1">Calificación:</label>
+    <app-calificacion
+     (addToCart)="OnEmitCalificacion($event)"
+    >
+    </app-calificacion>
+  </div>
+
+</mat-dialog-content>
+
+<mat-dialog-actions >
+  <div class="w-full flex justify-center gap-1">
+
+    <button
+     class="
+     bg-[#B91C1C] w-[5rem]
+     text-white px-3 py-2 rounded-md text-center"
+     (click)="OnClose()"
+    >
+      Cancelar
+    </button>
+    <button
+    class="bg-[#3730A3] w-[5rem] text-white px-3 py-2 rounded-md text-center"
+    (click)="onSave()">Save</button>
+  </div>
+  <!-- <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button> -->
+</mat-dialog-actions>

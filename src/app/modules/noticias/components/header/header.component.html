@@ -1,0 +1,17 @@
+<div class="w-full bg-[#334155] h-[3rem] shadow-xl flex justify-between fixed top-0 z-[1000]">
+    <div class="logo px-10 mt-2">
+        <i
+        (click)="togleSidebar()"
+        class=" md:hidden fa-solid fa-bars text-white mt-1 text-lg mr-2"></i>
+        <h2 class="text-lg md:text-3xl text-white">APP NOTICIA</h2>
+    </div>
+    <nav  class="flex items-center  mr-10">
+      <a
+        class="inline border-b-2 border-grey-50 mr-5 cursor-pointer text-white"
+        routerLink="/Registrar">Rregistrar</a>
+
+      <a
+      class="inline border-b-2 border-grey-50 cursor-pointer text-white"
+      routerLink="/Listar">Listar</a>
+    </nav>
+</div>

@@ -1,0 +1,35 @@
+
+.btn_close_abrir{
+  position: absolute;
+  background-color: red;
+  color: white;
+  width: 30px;
+  height: 30px;
+  padding: 2px;
+  border-radius: 50%;
+  top: 0.5rem;
+  left: 0.5rem;
+  opacity: 0;
+  z-index: 10;
+}
+
+
+@media(max-width:768px){
+
+  .btn_close_abrir{
+    opacity: 1;
+  }
+  .show{
+    position: absolute;
+    left: 0rem;
+    z-index: 1000;
+    background-color: white;
+   transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  .close{
+    position: absolute;
+    background: red!important;
+    left: -10rem;
+  }
+
+}

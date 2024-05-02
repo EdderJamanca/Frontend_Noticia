@@ -1,0 +1,32 @@
+<!-- <div class="flex justify-between"> -->
+  <h2 mat-dialog-title ></h2>
+  <!-- <button
+    class="block"
+    (click)="closeModa()"><i class="fa-solid fa-xmark"></i></button> -->
+<!-- </div> -->
+<mat-dialog-content >
+    <div class="w-full h-64 overflow-hidden">
+        <img [src]="articulo.urlToImage" alt="" class="block w-full">
+    </div>
+    <div>
+      <div class="w-full flex justify-between" >
+        <div class="w-10/12">
+          <h1 class="font-bold text-lg">{{articulo.title}}</h1>
+          <p class="text-gray-400 text-sm">Autor: {{articulo.author}}</p>
+        </div>
+        <div class="w-2/12">
+          @if(showCalificacion){
+            <app-calificacion></app-calificacion>
+          }
+        </div>
+      </div>
+      <p>
+        {{articulo.content}}
+      </p>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions >
+  <div class="w-full flex justify-end">
+    <button (click)="closeArticulo()" class="block bg-gray-500 py-2 px-3 rounded-lg text-white right-0">Cerrar</button>
+  </div>
+</mat-dialog-actions>

@@ -1,0 +1,27 @@
+<div class="w-full mt-6 flex justify-center">
+
+  <div class="rounded-md shadow-sm" >
+
+    <button type="button" class="px-4 py-2 text-sm font-medium text-blue-700 bg-white border border-gray-200 rounded-s-lg hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700" (click)="prevPage()" [disabled]="currentPage === 1">Anterior</button>
+
+    <!-- @if(isLoading == false){ -->
+
+      @for(pagina of getPageNumbersWithEllipsis(); track $index ){
+
+        <button type="button" class="px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700"
+        (click)="goToPage(pagina)" [class.active]="pagina === currentPage">
+          {{ pagina }}
+        </button>
+
+      }
+
+    <!-- } @else {
+
+    } -->
+
+    <button type="button" class="px-4 py-2 text-sm font-medium text-blue-700 bg-white border border-gray-200 rounded-e-lg hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700"
+    (click)="nextPage()" [disabled]="currentPage * itemsPerPage >= list.length">Siguiente</button>
+
+  </div>
+
+</div>

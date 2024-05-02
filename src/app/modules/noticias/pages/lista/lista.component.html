@@ -1,0 +1,27 @@
+<div class="relative top-[3rem] bg-white">
+     <!-- <button (click)="openClose()" class="btn_close_abrir">abri/close</button> -->
+      <div class="grid grid-cols-12">
+         <div class="col-span-3 lg:col-span-2 shadow-2xl h-[100vh]" [class.show]="openClose()" [class.close]="!openClose()">
+            <app-sidebar
+             (emitCalifCate)="emitCalifCate($event)"
+            ></app-sidebar>
+         </div>
+         <div class="col-span-12 md:col-span-9 lg:col-span-10 px-5 overflow-y-auto overflow-x-hidden h-[88vh]">
+          <div class="grid grid-cols-12 gap-3 mt-5">
+            @for(articulo of listArticuloFilter;track articulo ){
+               <app-card-resumen
+               [arti]="articulo"
+               (emitIdArticulo)="emitIdArticulo($event)"
+               class="col-span-12 sm:col-span-6 md:col-span-6 lg:col-span-4 xl:col-span-3"></app-card-resumen>
+            }
+          </div>
+          <app-paginacion
+          [itemsPerPage]="8"
+          [list]="listArticulo"
+          (dataEmit)="dataEmit($event)"
+          ></app-paginacion>
+
+         </div>
+      </div>
+
+</div>

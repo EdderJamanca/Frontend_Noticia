@@ -1,0 +1,32 @@
+<div class="bg-white border border-gray-200 rounded-lg shadow ">
+    <div class="w-full h-[6rem] overflow-hidden">
+      <img
+          class="rounded-t-lg"
+          [src]="arti.Img"
+          alt="">
+    </div>
+    <div class="p-5">
+        <p class="mb-2 text-md font-bold text-gray-900">{{arti.Titulo | slice:0:60}}</p>
+        <div class="w-full grid grid-cols-12 align-middle">
+            <div class="col-span-8">
+              <p class="mb-2 text-[8px]  text-gray-400">Autor: {{arti.Nom_Autor}}</p>
+            </div>
+            <div class="col-span-4">
+              <app-calificacion
+               [valorCalificar]="arti.Calificacion"
+              ></app-calificacion>
+            </div>
+        </div>
+        <p class="mb-3 font-normal text-gray-300 text-sm">
+            {{arti.Resumen | slice:0:100}}
+        </p>
+    </div>
+    <div class="p-5 flex flex-col gap-1">
+      <button
+      (click)="OnShowModal(arti)"
+      class="block bg-[#EAB308] rounded-md py-2 w-full text-white">LEER</button>
+      <button
+      (click)="OnDelete(arti.NoticiaId)"
+      class="block bg-[#B91C1C] rounded-md py-2 w-full text-white">ELIMINAR</button>
+    </div>
+</div>

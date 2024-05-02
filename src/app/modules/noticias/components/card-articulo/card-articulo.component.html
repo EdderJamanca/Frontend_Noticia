@@ -1,0 +1,30 @@
+<div class="p-2">
+  <div
+  class="w-10/12 border-2
+  rounded-lg shadow-inner
+  grid md:grid-cols-12 gap-4
+  mx-auto">
+    <div class="p-2 md:col-span-3 md:content-center">
+      <img
+       class="rounded-md w-full block"
+      [src]="articulo.urlToImage" alt="noticia">
+    </div>
+
+    <div class="md:col-start-4 md:col-end-11 lg:col-start-4 lg:col-end-12 p-2">
+      <h2 class="text-black font-bold text-sm">{{articulo.title}}</h2>
+      <p class="text-gray-500 text-xs">
+        {{articulo.description}}
+      </p>
+    </div>
+
+     <div class="md:col-start-11 md:col-span-2 lg:col-start-12 lg:col-span-1 flex justify-center p-3 md:flex-col gap-2">
+         <button
+         (click)="openDialog(articulo)"
+         class="bg-indigo-700 p-3 sm:block md:inline w-[50%] rounded-md md:w-full text-white"><i class="fa-solid fa-plus"></i></button>
+         <button
+         (click)="verArticulo(articulo)"
+         class="bg-yellow-600 p-3 w-[50%] md:w-full sm:block md:inline rounded-md text-white"><i class="fa-solid fa-eye"></i></button>
+     </div>
+  </div>
+
+</div>

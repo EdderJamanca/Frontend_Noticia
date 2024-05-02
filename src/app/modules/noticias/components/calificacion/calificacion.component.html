@@ -1,0 +1,7 @@
+<div class="flex justify-between mt-2">
+
+  @for(item of lisCalificacion();track item){
+    <i [ngClass]="item.nomClass" (click)="OnClick(item.id)"></i>
+  }
+</div>
+<!-- <i class="fa-solid fa-star"></i> -->

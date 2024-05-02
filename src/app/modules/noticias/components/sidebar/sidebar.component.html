@@ -1,0 +1,44 @@
+<div class="px-2 h-[92vh] pt-5 md:fixed  ">
+   <h2 class="text-gray-500 mb-0 inline pb-0 ">Filtar Por</h2>
+   <hr class="p-0 m-0">
+   <div id="categoria" class="mt-3 w-100">
+      <h2 class="text-gray-500 font-bold text-[12px]">CATEGORIA</h2>
+      <div class="flex flex-col">
+
+        @for(categoria of Categorias();track categoria){
+          <div class="flex items-center mb-1">
+            <input
+            [id]="categoria.idcategoria"
+            type="checkbox"
+            [checked]="categoria.ischeck"
+            (change)="OnChangeCheck(categoria.idcategoria)"
+            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 focus:ring-2 ">
+            <label [for]="categoria.idcategoria"
+            class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{categoria.Nom_Categoria}}</label>
+          </div>
+        }
+<!--
+          <div class="flex items-center mb-1">
+            <input id="cartegproa-2" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 focus:ring-2 ">
+            <label for="cartegproa-2"
+            class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Categoria 2</label>
+          </div>
+
+          <div class="flex items-center mb-1">
+            <input id="cartegproa-3" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 focus:ring-2 ">
+            <label for="cartegproa-3"
+            class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Categoria 3</label>
+          </div> -->
+
+        </div>
+   </div>
+   <div class="mt-3">
+    <h2 class="text-gray-500 font-bold text-[12px]">CALIFICACIÓN</h2>
+     <div class="pr-16">
+       <app-calificacion
+       [valorCalificar]="valorCalificacion"
+       (addToCart)="OnCalificar($event)"
+       ></app-calificacion>
+     </div>
+   </div>
+</div>
